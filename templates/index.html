@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+
+<div class="container my-3" style="border: 1px solid #ccc; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); border-radius: 30px; padding-left: 30px; padding-right: 20px;">
+  <br>
+    <h2>Add a Task</h2>
+    <form action="/" method="POST">
+  <div class="mb-3">
+    <label for="title" class="form-label">Task Title</label>
+    <input style="background-color: transparent;  "  type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="desc" class="form-label">Task Description</label>
+    <input style="background-color: transparent;" type="text" class="form-control" name="desc" id="desc">
+  </div>
+  <button type="submit" class="btn btn-dark">Submit</button>
+  <br>
+  <br>
+</form>
+</div>
+<div class="container my-3">
+    <h2>Your Task</h2>
+    {% if allTodo|length==0 %}
+    <div class="alert alert-light" style="background-color: transparent; border: none;" role="alert">
+  No Task Found. Add your first Task now.
+</div>
+    {% else %}
+    <table class="table" style="background-color: transparent; border: 1px solid #ccc; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);">
+  <thead>
+    <tr style="background-color: transparent;">
+      <th scope="col" style="background-color: transparent;">S.No</th>
+      <th scope="col" style="background-color: transparent;">Title</th>
+      <th scope="col" style="background-color: transparent;">Desc</th>
+      <th scope="col" style="background-color: transparent;">Time</th>
+      <th scope="col" style="background-color: transparent;">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+        
+    {% for Todo in allTodo %}
+    <tr>
+      <th scope="row" style="background-color: transparent;">{{loop.index}}</th>
+      <td style="background-color: transparent;">{{Todo.title}}</td>
+      <td style="background-color: transparent;">{{Todo.desc}}</td>
+      <td style="background-color: transparent;">{{Todo.date_created}}</td>
+      <td style="background-color: transparent;">
+        <a href="/update/{{Todo.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Update</a>
+        <a href="/delete/{{Todo.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</a>
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    {% endif %}
+</div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+    -->
+
+  {% endblock body %}

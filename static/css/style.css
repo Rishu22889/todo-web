@@ -1,0 +1,55 @@
+body {
+    background-image: url("/static/image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+tr {
+    background-color: transparent;
+}
+th {
+    background-color: transparent;
+}
+.about-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.about-section li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.about-section .author {
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: right;
+    color: #555;
+}
+
+
