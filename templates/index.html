@@ -19,12 +19,25 @@
       <span class="quote-box">
         <p id="quote" class="quote">Loading quote...</p>
       </span>
-    </div>
+    <div class="profile-dropdown">
+  <div class="profile-icon">
+    {{ current_user.username[0].upper() }}
+  </div>
+  <div id="logout-menu" class="logout-hidden">
+    <a href="{{ url_for('logout') }}">Logout</a>
+  </div>
+</div>
   </div>
 </nav>
 <script src="{{ url_for('static', filename='js/test.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-<div class="container my-3" style="border: 1px solid #ccc; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); border-radius: 30px; padding-left: 30px; padding-right: 20px;">
+<div class="welcome-container">
+  <h2>Welcome, {{ current_user.username }}</h2>
+</div>
+
+
+<div class="container my-3" style="border: 1px solid #ccc; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); border-radius: 30px; padding-left: 30px; padding-right: 20px; background-color: #88888823;">
   <br>
     <h2>Add a Task</h2>
     <form action="/" method="POST">

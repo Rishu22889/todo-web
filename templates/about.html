@@ -20,11 +20,17 @@
       <span class="quote-box">
         <p id="quote" class="quote">Loading quote...</p>
       </span>
+      <div class="profile-dropdown">
+  <div class="profile-icon" onclick="toggleLogout()">
+    {{ current_user.username[0].upper() }}
+  </div>
+  <div id="logout-menu" class="logout-hidden">
+    <a href="{{ url_for('logout') }}">Logout</a>
+  </div>
+</div>
     </div>
   </div>
 </nav>
-<script src="{{ url_for('static', filename='js/test.js') }}"></script>
-
 
 <div class="about-section" style="background-color: rgba(255, 255, 255, 0.146); border: 1px solid #ccc; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); border-radius: 30px; padding-left: 30px; padding-right: 20px;">
     <h2>About This Website</h2>
@@ -38,5 +44,7 @@
     <p>No clutter. No unnecessary features. Just a clean, fast, and responsive tool that helps you get things done.</p>
     <p class="author">Created by Rishi Singh</p>
 </div>
+<script src="{{ url_for('static', filename='js/test.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 {% endblock body %}

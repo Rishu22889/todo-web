@@ -23,3 +23,4 @@ function showNextQuote() {
 showNextQuote();
 
 setInterval(showNextQuote, 5000);
+
