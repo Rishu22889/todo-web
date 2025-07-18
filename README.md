@@ -1,6 +1,6 @@
 # 📝 Flask To-Do List Web App
 
-[🌐 Live Demo]((https://todo-web-3-qsli.onrender.com/))
+[🌐 Live Demo](https://todo-web-3-qsli.onrender.com/)
 
 A simple and secure multi-user **To-Do List** application built with **Flask**, featuring user authentication, task management, and SQLite database integration.
 
